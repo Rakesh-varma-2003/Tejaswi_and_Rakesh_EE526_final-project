@@ -7,7 +7,6 @@ def accuracy_top1(logits, targets):
     preds = torch.argmax(logits, dim=1)
     return (preds == targets).float().mean().item()
 
-@torch.no_grad()
 def evaluate(model, loader, device):
     model.eval()
     total_acc = 0.0
